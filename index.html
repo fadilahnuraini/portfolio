@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio Fadilah Nuraini - S.Kom | IT, Manufacturing, Quality & Data" />
+  <title>Fadilah Nuraini | Portfolio</title>
+
+  <style>
+    :root{
+      --navy:#17365d;
+      --blue:#2f6fae;
+      --light-blue:#edf5fc;
+      --green:#eaf6f0;
+      --purple:#f0effc;
+      --text:#233044;
+      --muted:#6d7888;
+      --white:#ffffff;
+      --bg:#f5f8fc;
+      --border:#e1e8f0;
+      --shadow:0 12px 35px rgba(31,55,82,.08);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .profile-photo 
+    {width: 100%;height: 100%;object-fit: cover;border-radius: 50%;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      max-width:1180px;
+      margin:auto;
+      height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 22px;
+    }
+    .logo{
+      font-size:20px;
+      font-weight:800;
+      color:var(--navy);
+    }
+    .nav-links{
+      display:flex;
+      gap:22px;
+      list-style:none;
+      font-size:13px;
+      color:#566274;
+      font-weight:600;
+    }
+    .nav-links a:hover{color:var(--blue)}
+
+    /* GENERAL */
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:0 22px;
+    }
+    section{padding:90px 0}
+    .section-title{margin-bottom:34px}
+    .section-title span{
+      color:var(--blue);
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+    }
+    .section-title h2{
+      margin-top:5px;
+      font-size:34px;
+      color:var(--navy);
+    }
+    .section-title p{
+      margin-top:8px;
+      color:var(--muted);
+    }
+
+    /* HERO */
+    .hero{
+      padding:80px 0 55px;
+      background:
+        radial-gradient(circle at 85% 25%, #dcecff 0, transparent 28%),
+        linear-gradient(180deg,#fff 0%,#f6faff 100%);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      align-items:center;
+      gap:60px;
+    }
+    .eyebrow{
+      color:var(--blue);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .hero h1{
+      font-size:58px;
+      line-height:1.05;
+      color:var(--navy);
+      margin-bottom:14px;
+    }
+    .hero h1 span{display:block}
+    .hero-subtitle{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+    .hero-text{
+      max-width:650px;
+      color:var(--muted);
+      margin-bottom:25px;
+    }
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 20px;
+      border-radius:11px;
+      font-weight:700;
+      font-size:14px;
+      transition:.2s;
+      border:1px solid var(--border);
+      background:white;
+    }
+    .btn-primary{
+      background:var(--navy);
+      color:#fff;
+      border-color:var(--navy);
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+    .profile-wrap{
+      display:flex;
+      justify-content:center;
+      position:relative;
+    }
+    .profile-circle{
+      width:360px;
+      height:360px;
+      border-radius:50%;
+      background:#e7f1fb;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .profile-placeholder{
+      width:82%;
+      height:82%;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:30px;
+      color:var(--blue);
+      font-weight:700;
+      background:#dceafa;
+    }
+
+    .quick-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:55px;
+    }
+    .quick-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 5px 20px rgba(31,55,82,.04);
+    }
+    .quick-card strong{display:block;color:var(--navy);font-size:14px}
+    .quick-card small{color:var(--muted)}
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:.75fr 1.25fr;
+      gap:45px;
+      align-items:center;
+    }
+    .about-photo{
+      min-height:370px;
+      border-radius:var(--radius);
+      background:linear-gradient(145deg,#dceafa,#eef5fb);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--blue);
+      font-weight:700;
+      text-align:center;
+      padding:30px;
+    }
+    .about-text p{color:var(--muted);margin-bottom:15px}
+    .info-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:25px;
+    }
+    .info-box{
+      padding:15px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:13px;
+    }
+    .info-box strong{display:block;color:var(--navy);font-size:13px}
+    .info-box span{font-size:12px;color:var(--muted)}
+
+    /* SKILLS */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .skill-card{
+      padding:27px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:white;
+      box-shadow:var(--shadow);
+    }
+    .skill-card:nth-child(1){background:var(--light-blue)}
+    .skill-card:nth-child(2){background:var(--green)}
+    .skill-card:nth-child(3){background:var(--purple)}
+    .skill-card h3{margin-bottom:17px;color:var(--navy)}
+    .skill-card ul{list-style:none}
+    .skill-card li{
+      padding:7px 0;
+      color:#596678;
+      font-size:14px;
+      border-bottom:1px dashed rgba(100,120,145,.18);
+    }
+    .skill-card li:last-child{border:0}
+
+    /* PROJECTS */
+    .projects{background:#fff}
+    .project-list{display:grid;gap:18px}
+    .project{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:24px;
+      padding:20px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      box-shadow:0 6px 22px rgba(31,55,82,.05);
+    }
+    .project-image{
+      min-height:150px;
+      border-radius:13px;
+      background:#eaf2fb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:15px;
+      color:var(--blue);
+      font-weight:800;
+    }
+    .project h3{color:var(--navy);margin-bottom:4px}
+    .project p{color:var(--muted);font-size:14px}
+    .tags{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+    .tag{
+      background:#eef4fa;
+      color:#416486;
+      border-radius:20px;
+      padding:5px 9px;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    /* EXPERIENCE */
+    .timeline{
+      position:relative;
+      max-width:900px;
+      margin:auto;
+      padding-left:28px;
+      border-left:2px solid #d4e0ed;
+    }
+    .timeline-item{
+      position:relative;
+      padding:0 0 38px 25px;
+    }
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:var(--blue);
+      border:4px solid #e5f0fa;
+      left:-36px;
+      top:5px;
+    }
+    .timeline-item h3{color:var(--navy)}
+    .timeline-item .date{font-size:12px;color:var(--blue);font-weight:700}
+    .timeline-item p{color:var(--muted);font-size:14px;margin:5px 0}
+    .timeline-item ul{padding-left:18px;color:var(--muted);font-size:14px}
+
+    /* EDUCATION */
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .edu-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+    }
+    .edu-card h3{color:var(--navy);margin-bottom:7px}
+    .edu-card p{color:var(--muted);font-size:14px}
+
+    /* CERTIFICATES */
+    .cert-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .cert{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:15px;
+    }
+    .cert-preview{
+      height:135px;
+      border-radius:10px;
+      background:#edf2f7;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#7c8795;
+      font-size:12px;
+      text-align:center;
+      padding:15px;
+    }
+    .cert h4{font-size:13px;color:var(--navy);margin-top:12px}
+    .cert p{font-size:11px;color:var(--muted)}
+
+    /* CONTACT */
+    .contact-box{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:42px;
+      display:grid;
+      grid-template-columns:1fr .8fr;
+      gap:40px;
+      box-shadow:var(--shadow);
+    }
+    .contact-list{list-style:none;margin:20px 0}
+    .contact-list li{padding:8px 0;color:var(--muted)}
+    .contact-art{
+      border-radius:15px;
+      background:#eef5fc;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      min-height:230px;
+      color:var(--blue);
+      font-size:24px;
+      font-weight:800;
+      padding:30px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:var(--navy);
+      color:white;
+      padding:25px 0;
+    }
+    .footer-inner{
+      max-width:1180px;
+      margin:auto;
+      padding:0 22px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      font-size:13px;
+    }
+    .social{display:flex;gap:16px}
+    .social a{opacity:.85}
+    .social a:hover{opacity:1}
+
+    /* MOBILE */
+    @media(max-width:850px){
+      .nav-links{display:none}
+      .hero-grid,.about-grid,.contact-box{grid-template-columns:1fr}
+      .hero{text-align:center}
+      .hero-text{margin-left:auto;margin-right:auto}
+      .buttons{justify-content:center}
+      .profile-circle{width:290px;height:290px}
+      .skills-grid{grid-template-columns:1fr}
+      .quick-cards{grid-template-columns:1fr}
+      .info-row{grid-template-columns:1fr}
+      .project{grid-template-columns:1fr}
+      .project-image{min-height:180px}
+      .edu-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr 1fr}
+      .footer-inner{flex-direction:column;text-align:center}
+    }
+
+    @media(max-width:520px){
+      section{padding:65px 0}
+      .hero{padding-top:55px}
+      .hero h1{font-size:42px}
+      .hero-subtitle{font-size:17px}
+      .section-title h2{font-size:28px}
+      .cert-grid{grid-template-columns:1fr}
+      .contact-box{padding:25px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#home">Fadilah Nuraini</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Hello, I'm</div>
+            <h1>Fadilah <span>Nuraini</span></h1>
+            <div class="hero-subtitle">S.Kom | Information Technology</div>
+            <p class="hero-text">
+              Information Technology graduate with experience in manufacturing,
+              inspection, and quality control, with an interest in IT,
+              administration, and data-related roles.
+            </p>
+
+            <div class="buttons">
+              <a class="btn btn-primary" href="CV_FADILAH NURAINI.pdf" download>↓ Download CV</a>
+              <a class="btn" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="profile-wrap">
+            <div class="profile-circle">
+              <!-- Ganti bagian ini dengan foto kamu -->
+              <img  src="foto-profil1.png"
+              alt="Foto Fadilah Nuraini"  class="profile-photo"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-cards">
+          <div class="quick-card">
+            <strong>🎓 IT Graduate</strong>
+            <small>S1 Teknik Informatika</small>
+          </div>
+          <div class="quick-card">
+            <strong>🏭 Manufacturing Experience</strong>
+            <small>Production & Inspection</small>
+          </div>
+          <div class="quick-card">
+            <strong>📊 Quality & Data Enthusiast</strong>
+            <small>IT • QC • Admin • PPIC</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <span>Profile</span>
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-photo">
+              <img src="foto-about.jpeg" alt="Fadilah Nuraini"
+                   style="width:100%;height:370px;object-fit:cover;border-radius:12px;">
+            </div>
+
+          <div class="about-text">
+            <p>
+              Saya adalah lulusan S1 Teknik Informatika dari Universitas Pelita Bangsa.
+              Saya memiliki pengalaman di bidang manufaktur, mulai dari operator produksi
+              hingga inspection dan quality-related work.
+            </p>
+            <p>
+              Selain pengalaman di manufaktur, saya juga memiliki ketertarikan pada
+              teknologi informasi, data, administrasi, dan pengembangan sistem.
+              Saya terus mengembangkan kemampuan agar dapat menggabungkan pengalaman
+              lapangan dengan kemampuan IT.
+            </p>
+
+            <div class="info-row">
+              <div class="info-box">
+                <strong>Education</strong>
+                <span>S1 Teknik Informatika</span>
+              </div>
+              <div class="info-box">
+                <strong>Experience</strong>
+                <span>Manufacturing</span>
+              </div>
+              <div class="info-box">
+                <strong>Interest</strong>
+                <span>IT & Data</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <span>Capabilities</span>
+          <h2>Skills</h2>
+          <p>Beberapa kemampuan yang saya gunakan dan terus saya kembangkan.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>💻 IT & Digital</h3>
+            <ul>
+              <li>Microsoft Office / Excel</li>
+              <li>MySQL</li>
+              <li>Python</li>
+              <li>HTML / CSS</li>
+              <li>Figma</li>
+              <li>VS Code</li>
+              <li>XAMPP</li>
+              <li>Canva</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>🏭 Manufacturing</h3>
+            <ul>
+              <li>Quality Inspection</li>
+              <li>Visual Inspection</li>
+              <li>Production Process</li>
+              <li>Sampling</li>
+              <li>Production Reporting</li>
+              <li>QC Documentation</li>
+              <li>SOP / Work Instruction</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>✨ Professional</h3>
+            <ul>
+              <li>Communication</li>
+              <li>Teamwork</li>
+              <li>Problem Solving</li>
+              <li>Time Management</li>
+              <li>Adaptability</li>
+              <li>Attention to Detail</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-title">
+          <span>My Work</span>
+          <h2>Projects</h2>
+          <p>Beberapa project yang pernah saya kerjakan.</p>
+        </div>
+
+        <div class="project-list">
+
+          <article class="project">
+            <div class="project-image">TELEGRAM<br>CAREBOT</div>
+            <div>
+              <h3>Telegram CareBot</h3>
+              <p>
+                Mental health screening chatbot berbasis Telegram yang dikembangkan
+                sebagai project tugas akhir untuk membantu proses screening DASS-21
+                dan identifikasi gejala menggunakan pendekatan NLP.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">TF-IDF</span>
+                <span class="tag">BERT</span>
+                <span class="tag">Telegram Bot</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <a class="btn btn-primary" href="#" onclick="alert('Tambahkan link demo/GitHub kamu di sini.');return false;">View Details</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-image">BUSINESS<br>WEBSITE</div>
+            <div>
+              <h3>Business Invitation Website</h3>
+              <p>
+                Website digital invitation yang dibuat untuk menyajikan informasi
+                acara secara sederhana, responsif, dan mudah diakses.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive Web</span>
+              </div>
+              <a class="btn btn-primary" href="#" onclick="alert('Tambahkan link website kamu di sini.');return false;">Live Demo</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-image">QUALITY<br>DASHBOARD</div>
+            <div>
+              <h3>Production Quality Dashboard</h3>
+              <p>
+                Contoh project data menggunakan Excel untuk menampilkan data produksi,
+                OK/NG, defect rate, target versus actual, dan visualisasi sederhana.
+              </p>
+              <div class="tags">
+                <span class="tag">Excel</span>
+                <span class="tag">VLOOKUP</span>
+                <span class="tag">Pivot Table</span>
+                <span class="tag">Chart</span>
+              </div>
+              <a class="btn btn-primary" href="#" onclick="alert('Tambahkan file/project dashboard kamu di sini.');return false;">View Details</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <span>Career</span>
+          <h2>Work Experience</h2>
+          <p>Pengalaman kerja yang membentuk kemampuan dan kedisiplinan saya.</p>
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="date">2026 — Present</div>
+            <h3>PT Epson Indonesia</h3>
+            <p><strong>Production Operator</strong></p>
+            <ul>
+              <li>Menjalankan proses produksi sesuai SOP dan work instruction.</li>
+              <li>Melakukan pemeriksaan kualitas selama proses produksi.</li>
+              <li>Menjaga pencapaian target produksi dan standar kualitas.</li>
+              <li>Melakukan pencatatan hasil pekerjaan.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">PT Sanoh Indonesia</div>
+            <h3>Inspection Operator</h3>
+            <p>
+              Melakukan visual inspection, pemeriksaan thickness/dimensi,
+              sampling, identifikasi OK/NG, dan reporting hasil inspeksi.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">PT Hamaden Indonesia</div>
+            <h3>Production / Assembly Operator</h3>
+            <p>
+              Berpengalaman dalam proses assembly, penggunaan jig/fixture,
+              pemasangan komponen, quality checking, dan pencapaian target produksi.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-title">
+          <span>Background</span>
+          <h2>Education & Organization</h2>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card">
+            <h3>🎓 Universitas Pelita Bangsa</h3>
+            <p><strong>S1 Teknik Informatika — S.Kom</strong></p>
+            <p>Fokus project: Telegram CareBot, DASS-21, NLP & BERT.</p>
+          </div>
+
+          <div class="edu-card">
+            <h3>👥 HIMATIF</h3>
+            <p><strong>Department of Media & Communication</strong></p>
+            <p>Content/media activities, digital communication, dan kegiatan organisasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+      <div class="container">
+        <div class="section-title">
+          <span>Credentials</span>
+          <h2>Certificates</h2>
+          <p>Tambahkan sertifikat yang relevan dengan posisi yang kamu lamar.</p>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert">
+            <div class="cert-preview">UPLOAD<br>SERTIFIKAT</div>
+            <h4>Microsoft Office</h4>
+            <p>Tambahkan tahun sertifikat</p>
+          </div>
+          <div class="cert">
+            <div class="cert-preview">UPLOAD<br>SERTIFIKAT</div>
+            <h4>Excel / Data</h4>
+            <p>Tambahkan tahun sertifikat</p>
+          </div>
+          <div class="cert">
+            <div class="cert-preview">UPLOAD<br>SERTIFIKAT</div>
+            <h4>Quality Control</h4>
+            <p>Tambahkan tahun sertifikat</p>
+          </div>
+          <div class="cert">
+            <div class="cert-preview">UPLOAD<br>SERTIFIKAT</div>
+            <h4>K3</h4>
+            <p>Tambahkan tahun sertifikat</p>
+          </div>
+          <div class="cert">
+            <div class="cert-preview">UPLOAD<br>SERTIFIKAT</div>
+            <h4>IT / Programming</h4>
+            <p>Tambahkan tahun sertifikat</p>
+          </div>
+          <div class="cert">
+            <div class="cert-preview">UPLOAD<br>SERTIFIKAT</div>
+            <h4>Seminar / Training</h4>
+            <p>Tambahkan tahun sertifikat</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <span>Let's Connect</span>
+          <h2>Get In Touch</h2>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <p>
+              Jika kamu tertarik untuk bekerja sama atau ingin mengetahui
+              lebih lanjut mengenai pengalaman saya, silakan hubungi saya.
+            </p>
+
+            <ul class="contact-list">
+              <li>✉️ anifadilah13@email.com</li>
+              <li>📱 +62 851 5604 2751</li>
+              <li>
+                💼 <a href="https://www.linkedin.com/in/fadilah-nuraini-67a772302"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                     LinkedIn
+                </a>
+              </li>
+              <!--<li>💻 github.com/username</li>-->
+              
+            </ul>
+
+            <a class="btn btn-primary" href="CV_FADILAH NURAINI.pdf" download>
+              ↓ Download CV
+            </a>
+          </div>
+
+          <div class="contact-art">
+            Let's<br>Connect!
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <strong>Fadilah Nuraini</strong>
+      <span>Build Better Skills • Create Better Opportunities</span>
+      <div class="social">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
