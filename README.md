@@ -1,53 +1,28 @@
-# Fadilah Nuraini — Portfolio
+# Personal Portfolio Website — Fadilah Nuraini
 
-Welcome to my personal portfolio website.
+Website portfolio pribadi yang dibuat untuk menampilkan profil, skills,
+project, pengalaman kerja, pendidikan, sertifikat, dan informasi kontak.
 
-## 👩‍💻 About Me
+## 📌 Deskripsi
 
-I am a Bachelor of Computer Science (S.Kom) graduate in Information Technology from Universitas Pelita Bangsa.
+Website ini dibuat menggunakan HTML dan CSS dalam satu file `index.html`.
+Website dirancang dengan tampilan responsive sehingga dapat diakses melalui
+desktop maupun perangkat mobile.
 
-I have experience in manufacturing, production, inspection, and quality-related work, with an interest in Information Technology, administration, data, and system development.
+## 🛠️ Teknologi yang Digunakan
 
-## 💻 Skills
+- HTML5
+- CSS3
+- Responsive Web Design
+- GitHub Pages
 
-- Microsoft Office / Excel
-- MySQL
-- Python
-- HTML / CSS
-- Figma
-- VS Code
-- XAMPP
-- Canva
-- Quality Inspection
-- Production Process
-- Data & Reporting
+## 📂 Struktur File
 
-## 📌 Projects
-
-### Telegram CareBot
-A Telegram-based screening chatbot developed as my final project using DASS-21 and NLP approaches.
-
-### Business Invitation Website
-A responsive digital invitation website developed using HTML, CSS, and JavaScript.
-
-### Production Quality Dashboard
-An Excel-based project for displaying production data, OK/NG results, defect rate, target vs actual, and simple visualizations.
-
-## 💼 Work Experience
-
-- PT Epson Indonesia — Production Operator
-- PT Sanoh Indonesia — Inspection Operator
-- PT Hamaden Indonesia — Production / Assembly Operator
-
-## 🎓 Education
-
-**Universitas Pelita Bangsa**  
-S1 Teknik Informatika — S.Kom
-
-## 🌐 Portfolio
-
-This repository contains the source code and assets for my personal portfolio website.
-
----
-
-© 2026 Fadilah Nuraini
+```text
+portfolio/
+│
+├── index.html
+├── foto-profil1.png
+├── foto-about.jpeg
+├── CV_FADILAH NURAINI.pdf
+└── README.md
